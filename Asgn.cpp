@@ -12,7 +12,7 @@ Asgn::Asgn(std::string nm, std::string tp, int pt, std::string dt, std::vector<s
 	this->grades = getGrades();
 }
 // private method to get array of student grades for this assignment
-std::vector<int> Asgn::getGrades(){ // where are grades stored?
+std::vector<int> Asgn::getGrades(){
 	// load from file
 	std::vector<int> grds = * new std::vector<int>();
 	grds.push_back(10);
@@ -21,7 +21,7 @@ std::vector<int> Asgn::getGrades(){ // where are grades stored?
 	return grds;
 }
 // assign grades for all students for this assignemnt
-void Asgn::gradeAsgn(std::string nm){ // What is name?
+void Asgn::gradeAsgn(std::string nm){
 	for(int i = 0; i < students.size(); i++){
 		// display current student and grade
 		std::cout << "Student: " << students[i] << ", Current Grade: ";
