@@ -7,7 +7,7 @@ class Asgn{
 		std::string name;
 		std::string type;
 		int points;
-		std::string duedate; // *Can this be changed to time_t for sorting?*
+		std::string duedate;
 		std::vector<int> getGrades();
 	public:
 		Asgn(std::string nm, std::string tp, int pt, std::string dt, std::vector<std::string> st);
