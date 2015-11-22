@@ -52,7 +52,7 @@ void Asgn::gradeAsgn(std::string nm){
 	}
 }
 // change grade for a single student
-void Asgn::changeGrade(std::string nm, std::string stud){ // what is name?
+void Asgn::changeGrade(std::string nm, std::string stud){
 	int stud_index = -1;
 	int i = 0;
 	// find student in student array
