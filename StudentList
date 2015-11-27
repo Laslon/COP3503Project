@@ -1,0 +1,360 @@
+Students
+//Name First, Last, Courses, Credit Hours, GPA Points
+
+
+Weiss Adams;45033;MAC2313;HUM2305;COP3530;MAC3473;56;83.01
+Emile Airn;34215;PHY2048;CHM2046;MAC3473;ENG2300;48;76.64
+Christine Alpine;34151;PHY2048;CHM2046;COP3530;MAC3473;52;84.21
+Mark Auburn;14021;PHY2048;MAC2313;HUM2305;COP3530;26;71.11
+Erika Berns;33320;PHY2048;COP3530;MAC3473;ENG2300;34;83.75				
+Kyle Birch;53225;PHY2048;MAC2313;HUM2305;ENG2300;40;56.69	
+Robin Blaise;42211;CHM2046;MAC3473;COP3530;ENG2300;15;90.02
+Nathan Bolt;10343;CHM2046;HUM2305;COP3530;MAC3473;34;78.90
+Johnathon Bragg;24444;PHY2048;MAC2313;HUM2305;ENG2300;13;92.63			
+Shaun Campbells;32155;CHM2046;MAC2313;HUM2305;ENG2300;48;73.39
+Steven Chang;21355;PHY2048;MAC2313;HUM2305;ENG2300;96;81.54		
+Alex Cloud;41534;PHY2048;COP3530;MAC3473;ENG2300;15;49.73	
+Ben Cogsworth;34505;CHM4046;HUM2305;ENG2300;MAC2313;74;91.32
+Blake Ellens;15252;CHM2046;MAC2313;COP3530;ENG2300;100;86.29
+Ellie Fisher;25022;MAC2313;HUM2305;ENG2300;PHU2048;64;76.51
+Nigel Forester;54353;CHM2046;HUM2305;MAC3473;ENG2300;34;82.30
+Kunnu Forte;31432;HUM2305;COP3530;PHY2048;MAC2313;13;74.12
+Lee Gibson;42352;CHM2046;HUM2305;MAC3473;COP3503;56;87.23
+Ronald Harris;50422;PHY2048;MAC2313;HUM2305;COP3530;26;43.36 
+Edea Harrison;10123;PHY2048;HUM2305;MAC3473;ENG2300;14;85.74
+Anna Jackson;05135;PHY2048;CHM2046;COP3530;MAC3473;80;71.51
+Mallory Jerome;01025;CHM2046;MAC2313;ENG2300;COP3530;56;84.09
+Grit Jones;13103;PHY2048;MAC2313;HUM2305;COP3530;76;74.36
+Kairi Locke;31122;CHM2046;MAC2313;HUM2305;ENG2300;92;85.94
+Bonnie Lugo;14121;CHM2046;HUM2305;COP3530;MAC3473;44;74.25
+Isabelle Marrara;43133;PHY2048;HUM2305;MAC3473;ENG2300;14;91.56
+Alice Morrison;40003;PHY2048;HUM2305;MAC3473;ENG2300;86;89.71
+Rachel Motz;43312;CHM2046;HUM2305;COP3530;MAC3473;40;93.84
+Alexis Navar;30241;PHY2048;HUM2305;COP3530;MAC3473;64;96.71
+Miles Nickels;14323;CHM2046;MAC2313;HUM2305;ENG2300;82;84.28
+Chris Nicos;12103;PHY2048;COP3530;MAC3473;ENG2300;48;94.85
+Tyler Parks;45221;PHY2048;CHM2046;COP3530;MAC3473;96;73.84
+Harry Potts;21130;PHY2048;MAC2313;HUM2305;COP3530;110;89.56
+Pryce Queen;41042;PHY2048;HUM2305;COP3530;MAC3473;70;75.27
+Nora Quince;13100;CHM2046;MAC2313;ENG2300;COP3530;48;50.29  
+Elise Rogers;21040;PHY2048;MAC2313;HUM2305;COP3530;71;87.63
+Kylie Rose;52451;PHY2048;MAC2313;ENG2300;CHM2046;38;90.28
+Mary Rosinante;35115;CHM2046;MAC2313;COP3530;ENG2300;14;54.37	
+Elaine Sakuraba;13043;PHY2048;CHM2046;MAC3473;ENG2300;42;92.67
+Santiago Sanchez;15102;PHY2048;MAC2313;HUM2305;COP3530;26;87.29
+Jennifer Schnee;44201;PHY2048;MAC2313;HUM2305;COP3530;57;73.29
+Seth Schneider;41335;PHY2048;MAC2313;COP3530;ENG2300;26;94.28
+George Stillwell;14545;PHY2048;HUM2305;COP3530;MAC3473;31;35.36	
+Courtney Sweeney;32103;PHY2048;CHM2046;COP3530;MAC3473;50;88.39
+Ashe Thompson;33011;PHY2048;CHM2046;COP3530;MAC3473;58;87.36
+Hershel Underhill;02315;CHM2046;HUM2305;COP3530;MAC3473;42;91.28
+Bruce Wickham;43221;CHM2046;MAC2313;COP3530;ENG2300;94;72.84
+Kimberly Wilkins;15531;PHY2048;CHM2046;MAC3473;ENG2300;46;70.28
+Percy Williams;22053;PHY2048;HUM2305;MAC3473;ENG2300;47;83.27
+Colleen Woods;33344;PHY2048;CHM2046;COP3530;MAC3473;14;93.25
+ 
+
+
+
+
+
+
+
+
+
+Professors
+//Name, Teacher ID, Course
+Sebastian Chu;00089;PHY2048;CHM2046
+Andrea Costello;00019;ENG2300;COP3530;HUM2305
+Wilson Plitz;00042;MAC2313;MAC3473
+
+Courses
+//Course Number, Course Name, Credit Hours, Project, Homework, Test, Quiz, Classwork, Attendance
+
+PHY2048;Physics With Calculus I;3;30;30;10;10;5;5;10 
+CHM2046;Chemistry 2;3;0;25;50;10;0;15
+MAC2313;Analytical Geometry and Calculus 3;3;0;20;40;20;10;10
+HUM2305;What is the Good Life;3;30;5;30;0;15;20
+COP3530;Data Structures and Algorithms;4;40;20;40;0;0;0
+MAC3473;Honors Calculus 2;4;0;20;60;20;0;0   
+ENG2300;Film Analysis;4;50;5;20;5;10;10
+
+Students in Courses
+
+PHY2048 (33)
+//Name, Student ID
+Emile Airn;34215
+Christine Alpine;34151
+Mark Auburn;14021
+Erika Berns;33320
+Kyle Birch;53225
+Johnathon Bragg;24444
+Steven Chang;21355
+Alex Cloud;41534
+Ellie Fisher;25022
+Kunnu Forte;31432
+Ronald Harris;50422
+Edea Harrison;10123
+Anna Jackson;05135
+Grit Jones;13103
+Isabelle Marrara;43133
+Alice Morrison;40003
+Alexis Navar;30241
+Chris Nicos;12103
+Tyler Parks;45221
+Harry Potts;21130
+Pryce Queen;41042
+Elise Rogers;21040
+Kylie Rose;52451
+Elaine Sakuraba;13043
+Santiago Sanchez;15102
+Jennifer Schnee;44201
+Seth Schneider;41335
+George Stillwell;14545
+Courtney Sweeney;32103
+Ashe Thompson;33011
+Kimberly Wilkins;15531
+Percy Williams;22053
+Colleen Woods;33344
+   
+
+
+  
+
+
+
+
+CHM2046 (27)
+Weiss Adams;45033
+Emile Airn;34215
+Christine Alpine;34151
+Robin Blaise;42211
+Nathan Bolt;10343
+Shaun Campbells;32155
+Ben Cogsworth;34505
+Blake Ellens;15252
+Nigel Forester;54353
+Lee Gibson;42352
+Anna Jackson;05135
+Mallory Jerome;01025
+Kairi Locke;31122
+Bonnie Lugo;14121
+Rachel Motz;43312
+Miles Nickels;14323
+Tyler Parks;45221
+Nora Quince;13100
+Kylie Rose;52451
+Mary Rosinante;35115
+Elaine Sakuraba;13043
+Courtney Sweeney;32103
+Ashe Thompson;33011
+Hershel Underhill;02315
+Bruce Wickham;43221
+Kimberly Wilkins;15531
+Colleen Woods;33344		
+	
+		
+		
+
+MAC2313 (23)
+Mark Auburn;14021
+Kyle Birch;53225
+Johnathon Bragg;24444
+Shaun Campbells;32155
+Steven Chang;21355
+Ben Cogsworth;34505
+Blake Ellens;15252
+Ellie Fisher;25022
+Kunnu Forte;31432
+Ronald Harris;50422
+Mallory Jerome;01025
+Grit Jones;13103
+Kairi Locke;31122
+Miles Nickels;14323
+Harry Potts;21130
+Nora Quince;13100
+Elise Rogers;21040
+Kylie Rose;52451
+Mary Rosinante;35115
+Santiago Sanchez;15102
+Jennifer Schnee;44201	   
+Seth Schneider;41335	
+Bruce Wickham;43221	
+	
+		
+		
+	
+	      
+
+HUM2305 (30)
+Weiss Adams;45033
+Mark Auburn;14021
+Kyle Birch;53225
+Nathan Bolt;10343
+Johnathon Bragg;24444	
+Shaun Campbells;32155			
+Steven Chang;21355
+Ben Cogsworth;34505
+Ellie Fisher;25022
+Nigel Forester;54353
+Kunnu  Forte;31432
+Lee Gibson;42352
+Ronald Harris;50422
+Edea Harrison;10123
+Grit Jones;13103
+Kairi Locke;31122
+Bonnie Lugo;14121				
+Isabelle Marrara;43133	
+Alice Morrison;40003	
+Rachel Motz;43312	
+Alexis Navar;30241
+Miles Nickels;14323
+Harry Potts;21130
+Pryce Queen;41042
+Elise Rogers;21040
+Santiago Sanchez;15102
+Jennifer Schnee;44201
+George Stillwell;14545   	
+Hershel Underhill;02315	
+Percy Williams;22053			
+										
+			
+
+
+COP3530 (33)
+Weiss Adams;45033
+Christine Alpine;34151
+Mark Auburn;14021
+Erika Berns;33320
+Robin Blaise;42211
+Nathan Bolt;10343
+Alex Cloud;41534
+Blake Ellens;15252
+Kunnu Forte;31432
+Lee Gibson;42352
+Ronald Harris;50422
+Anna Jackson;05135
+Mallory Jerome;01025
+Grit Jones;13103	
+Bonnie Lugo;14121
+Rachel Motz;43312	
+Alexis Navar;30241
+Chris Nicos;12103
+Tyler Parks;45221
+Harry Potts;21130
+Pryce Queen;41042
+Nora Quince;13100;	
+Elise Rogers;21040	
+Mary Rosinante;35115
+Santiago Sanchez;15102
+Jennifer Schnee;44201
+Seth Schneider;41335
+George Stillwell;14545  
+Courtney Sweeney;32103
+Ashe Thompson;33011
+Hershel Underhill;02315
+Bruce Wickham;43221
+Colleen Woods;33344	
+   	
+								
+MAC3473 (27)
+Weiss Adams;45033
+Emile Airn;34215
+Christine Alpine;34151
+Erika Berns;33320
+Robin Blaise;42211
+Nathan Bolt;10343
+Alex Cloud;41534
+Nigel Forester;54353
+Lee Gibson;42352			
+Edea Harrison;10123
+Anna Jackson;05135
+Bonnie Lugo;14121
+Isabelle Marrara;43133
+Alice Morrison;40003
+Rachel Motz;43312
+Alexis Navar;30241
+Chris Nicos;12103
+Tyler Parks;45221
+Pryce Queen;41042
+Elaine Sakuraba;13043
+George Stillwell;14545   
+Courtney Sweeney;32103
+Ashe Thompson;33011
+Hershel Underhill;02315
+Kimberly Wilkins;15531
+Percy Williams;22053	
+Colleen Woods;33344
+		
+	
+			
+	   		
+			
+		
+			
+				
+				
+			
+			
+ 			
+			
+		
+	
+		
+
+		
+	
+
+
+
+
+
+
+ENG2300 (27)
+
+Emile Airn;34215
+Erika Berns;33320
+Kyle Birch;53225
+Robin Blaise;42211
+Johnathon Bragg;24444
+Shaun Campbells;32155
+Steven Chang;21355
+Alex Cloud;41534
+Ben Cogsworth;34505
+Blake Ellens;15252
+Ellie Fisher;25022
+Nigel Forester;54353	
+Edea Harrison;10123
+Mallory Jerome;01025
+Kairi Locke;31122
+Isabelle Marrara;43133
+Alice Morrison;40003
+Miles Nickels;14323	
+Chris Nicos;12103
+Nora Quince;13100	
+Kylie Rose;52451	
+Mary Rosinante;35115
+Elaine Sakuraba;13043
+Seth Schneider;41335
+Bruce Wickham;43221
+Kimberly Wilkins;15531	
+Percy Williams;22053
+		
+			
+		
+				
+			
+		
+		
+			
+		
+			
+			
+		
+			
+				
+			
+	
+		
+			
+
