@@ -9,10 +9,12 @@ class Course{
 		std::vector<Asgn> asgns;
 		std::vector<Asgn> getAsgns();
 		std::vector<std::string> getStudents();
-		// need catagory and weightage fields
+		int getStudentIndex(std::string stud);
+		// need weightage field
 	public:
 		Course(std::string id, std::string nm, int hrs);
-		int studentGrade(int student_ID);
+		bool checkStudent(std::string stud);
+		float studentGrade(std::string stud);
 		void studentViewGrades(std::string stud);
 		void viewGrades(void);
 		void enterGrades(std::string nm);
