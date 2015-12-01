@@ -1,0 +1,14 @@
+Course
+PHY2048
+Averages
+##
+Assignments
+// asgn_name;total_points;catagory
+HW1;10;Homework
+// grades
+4;7;6;9;9;4;10;7;1;7;1;2;2;6;0;1;6;5;5;5;7;3;2;7;2;6;1;7;9;0;4;9;2;
+Quiz1;20;Quiz
+10;3;9;10;0;1;0;4;6;4;1;10;8;5;0;6;4;9;3;7;4;2;1;2;0;6;6;1;0;3;7;9;6;5;
+HW2;10;Homework
+Quiz;20;Quiz
+Exam1;50;Exam
