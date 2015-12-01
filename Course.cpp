@@ -24,12 +24,9 @@ std::vector<Asgn> Course::getAsgns(){
 	a.push_back(* new Asgn("Test Assignment", "Test Type", 15, "12/31/2015", students));
 	return a;
 }
-int Course::studentGrade(int student){
-	// return student grade in course obtained from multi-dimensional array
-	int avg = 90;
-	return avg;
-}
-void Course::studentViewGrades(std::string stud){
+// get the index of a student in this course's student array
+// returns -1 if student not found
+int Course::getStudentIndex(std::string stud){
 	int stud_index = -1;
 	int i = 0;
 	while(i < students.size() && stud_index == -1){
@@ -38,19 +35,31 @@ void Course::studentViewGrades(std::string stud){
 		}
 		i++;
 	}
+	return stud_index;
+}
+// check to see if inputed student name is found in this course's student array
+bool Course::checkStudent(std::string stud){
+	int stud_index = getStudentIndex(stud);
 	if(stud_index == -1){
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits <std::streamsize> ::max(), '\n');
-		std::cout << "Student not found. Press enter to return to main menu.";
+		std::cout << "Student not found. Press enter to continue.";
 		std::cin.ignore(std::numeric_limits <std::streamsize> ::max(), '\n' );
+		return false;
 	}else{
-		for(int j = 0; j < asgns.size(); j++){
-			asgns[j].studentViewGrades(stud_index);
-		}
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits <std::streamsize> ::max(), '\n');
-		std::cout << "Press enter to continue.";
-		std::cin.ignore(std::numeric_limits <std::streamsize> ::max(), '\n' );
+		return true;
+	}
+}
+// return a specific students course average
+float Course::studentGrade(std::string stud){
+	float avg = 90; // to do: get averages from file
+	return avg;
+}
+// display all of this course's assignment grades for a specific student
+void Course::studentViewGrades(std::string stud){
+	int stud_index = getStudentIndex(stud);
+	for(int j = 0; j < asgns.size(); j++){
+		asgns[j].studentViewGrades(stud_index);
 	}
 }
 void Course::viewGrades(void){
