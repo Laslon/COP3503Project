@@ -1,5 +1,4 @@
 #include "Course.h"
-#include "Asgn.cpp"
 #include <iostream>
 using namespace std;
 // course class methods
@@ -96,7 +95,7 @@ void Course::changeGrade(std::string nm, std::string stud){
 		std::cin.ignore(std::numeric_limits <std::streamsize> ::max(), '\n' );
 	}
 }
-void Course::createAsgn(std::string nm, int total_points, int deadline, std::string type){
+void Course::createAsgn(std::string nm, int total_points, std::string deadline, std::string type){
 	asgns.push_back(Asgn(nm, type, total_points, deadline, getStudents()));
 	cout << "Assignment created ";
 }
