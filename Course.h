@@ -1,6 +1,5 @@
 #include <vector>
 #include <string>
-#include "Asgn.cpp"
 /*
 	do something with print()
 */
@@ -21,7 +20,7 @@ class Course{
 		void viewGrades(void);
 		void enterGrade(std::string nm);
 		void changeGrade(std::string nm, std::string stud);
-		void createAsgn(std::string nm, int pts, int dln, std::string tp); // should deadline be type Time/Date?
+		void createAsgn(std::string nm, int pts, std::string dln, std::string tp); // should deadline be type Time/Date?
 		void deleteAsgn(std::string nm);
 		void dataMaintenance(void); // updates course grades for students and course average for teacher
 																		// when grades are added/changed
