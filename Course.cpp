@@ -62,7 +62,7 @@ void Course::viewGrades(void){
 	std::cout << "Press enter to continue.";
 	std::cin.ignore(std::numeric_limits <std::streamsize> ::max(), '\n' );
 }
-void Course::enterGrade(std::string nm){ // should be enterGrades()?
+void Course::enterGrades(std::string nm){
 	bool found = false;
 	for(int i = 0; i < asgns.size(); i++){
 		if(asgns[i].getName().compare(nm) == 0){
