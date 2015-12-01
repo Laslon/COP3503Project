@@ -10,7 +10,7 @@ class Asgn{
 		std::string duedate;
 		std::vector<int> getGrades();
 	public:
-		Asgn(std::string nm, std::string tp, int pt, std::string dt, std::vector<std::string> st);
+		Asgn(std::string nm, std::string typ, int pt, std::string dt, std::vector<std::string> st);
 		// create other constructors for when not creating snew assignment?
 		void gradeAsgn(std::string nm); // enter grade for all students
 		void changeGrade(std::string nm, std::string stud); // enter grade for 1 student
