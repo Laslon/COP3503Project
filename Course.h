@@ -1,8 +1,5 @@
 #include <vector>
 #include <string>
-/*
-	do something with print()
-*/
 class Course{
 	private:
 		std::string course_ID;
@@ -18,7 +15,7 @@ class Course{
 		int studentGrade(int student_ID);
 		void studentViewGrades(std::string stud);
 		void viewGrades(void);
-		void enterGrade(std::string nm);
+		void enterGrades(std::string nm);
 		void changeGrade(std::string nm, std::string stud);
 		void createAsgn(std::string nm, int pts, std::string dln, std::string tp); // should deadline be type Time/Date?
 		void deleteAsgn(std::string nm);
