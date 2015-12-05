@@ -3,7 +3,7 @@
 # we could make it compile only files that have changed but that seems 
 #unnecessary with a small project.
 all:
-	g++ Course.cpp -o Grade_Software
+	g++ Course_Test.cpp -o Grade_Software
 	
 clean:
 	rm -rf
