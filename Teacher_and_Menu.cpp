@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <cmath>
+#include "Course.cpp"
 
 using namespace std;
 
