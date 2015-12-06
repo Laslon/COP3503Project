@@ -9,16 +9,12 @@ Asgn::Asgn(std::string nm, std::string tp, int pt, std::string dt, std::vector<s
 	this->points = pt;
 	this->duedate = dt;
 	this->students = st;
-	this->grades = getGrades();
 }
-// private method to get array of student grades for this assignment
-std::vector<int> Asgn::getGrades(){
+// public method for adding grades to list
+void Asgn::pushGrade(double grade){
 	// load from file
-	std::vector<int> grds = * new std::vector<int>();
-	grds.push_back(10);
-	grds.push_back(5);
-	grds.push_back(-1);
-	return grds;
+	grades.push_back(grade);
+	
 }
 // assign grades for all students for this assignemnt
 void Asgn::gradeAsgn(std::string nm){
