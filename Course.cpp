@@ -83,29 +83,53 @@ void Course::getInfo(){
 // load students from MainFile
 std::vector<std::string> Course::getStudents(){
 	std::vector<std::string> studs = * new std::vector<std::string>();
-	/*ifstream main_list("MainList.txt");
-	char temp_c[128];
-	// find "Students" header
+	ifstream main_list("MainList.txt");
+	if(!main_list.is_open()){
+		std::cout << "Error: Couldn't open MainList file\n";
+		return studs;
+	}
+	std::string temp;
 	bool header_found = false;
+	// find "Students in Courses" header
 	while(!main_list.eof() && !header_found){
-		main_list.getline(temp_c, 128);
-		std::string temp_s(temp_c);
-		if(temp_s.compare("Students") == 0){
+		getline(main_list, temp);
+		if(temp.compare("Students in Courses") == 0){
 			header_found = true;
 		}
 	}
-	// print error and return empty vector if "Students" header not found
+	// print error and return if header not found
 	if(!header_found){
-		std::cout << "Error: Students missing!\n";
+		std::cout << "Error: Courses missing!\n";
 		return studs;
 	}
 	header_found = false; // reset
-	while(!main_list.eof() && !header_found){
-		
-	}*/
-	studs.push_back("Tana");
-	studs.push_back("Aubree");
-	studs.push_back("Jacob");
+	bool course_found = false;
+	// find course id, stop looking when found, or eof reached
+	while(!main_list.eof() && !header_found && !course_found){
+		getline(main_list, temp);
+		if(temp.compare(0, 7, course_ID) == 0){
+			course_found = true;
+		}
+	}
+	// print error and return if course id not found
+	if(!course_found){
+		std::cout << "Error: Course not found.\n";
+		return studs;
+	}
+	getline(main_list, temp);
+	bool is_name = true;
+	while(is_name){
+		getline(main_list, temp, ';');
+		for(int i = 0; i < temp.size(); i++){
+			if(!isalpha((int)temp[i]) && temp[i] != ' '){
+				is_name = false;
+			}
+		}
+		if(is_name){
+			studs.push_back(temp);
+			getline(main_list, temp);
+		}
+	}
 	return studs;
 }
 std::vector<Asgn> Course::getAsgns(){
