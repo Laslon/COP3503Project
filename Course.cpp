@@ -208,7 +208,24 @@ void Course::createAsgn(std::string nm, int total_points, std::string deadline, 
 	cout << "Assignment created ";
 }
 void Course::deleteAsgn(std::string nm){
-	cout << "Assignment deleted (not really)";
+	int index = -1;
+	for(int i =0; asgns.size()-1 <= index; i++)
+	{
+		if(asgns[i].getName()== nm)
+		{
+			index = i;
+		}
+	}
+	if(index == -1)
+	{
+		
+	}
+	else
+	{
+		asgns.erase(asgns.begin()+index);
+		
+	}
+	cout << "Assignment deleted (Maybe???)";
 }
 void Course::dataMaintenance(void){
 	
