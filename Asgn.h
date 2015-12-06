@@ -8,7 +8,7 @@ class Asgn{
 		std::string type;
 		int points;
 		std::string duedate;
-		std::vector<int> getGrades();
+		void pushGrade(int grade);
 	public:
 		Asgn(std::string nm, std::string typ, int pt, std::string dt, std::vector<std::string> st);
 		// create other constructors for when not creating snew assignment?
@@ -17,5 +17,5 @@ class Asgn{
 		void studentViewGrades(int stud_index);
 		void viewGrades();
 		std::string getName();
-		std::string getType();
+		
 }; 
