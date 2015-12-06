@@ -259,5 +259,12 @@ void Course::deleteAsgn(std::string nm){
 	cout << "Assignment deleted (Maybe)";
 }
 void Course::dataMaintenance(void){
+	string t = course_name + ".txt";;
+	const char* text = t.c_str();
+	cout << text; 
+	ofstream c_file (text, ofstream::out);
+	c_file << text << "/n";
+	c_file << "Category" << "/n";
 	
+	c_file.close();
 }
