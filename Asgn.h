@@ -17,4 +17,5 @@ class Asgn{
 		void studentViewGrades(int stud_index);
 		void viewGrades();
 		std::string getName();
+		std::string getType();
 }; 
