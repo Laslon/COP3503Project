@@ -225,7 +225,7 @@ void Course::deleteAsgn(std::string nm){
 		asgns.erase(asgns.begin()+index);
 		
 	}
-	cout << "Assignment deleted (Maybe???)";
+	cout << "Assignment deleted (Maybe)";
 }
 void Course::dataMaintenance(void){
 	
