@@ -156,6 +156,7 @@ float Course::studentGrade(std::string stud){
 // display all of this course's assignment grades for a specific student
 void Course::studentViewGrades(std::string stud){
 	int stud_index = getStudentIndex(stud);
+	std::cout << "Course Average: " << studentGrade(stud) << "\n";
 	for(int j = 0; j < asgns.size(); j++){
 		asgns[j].studentViewGrades(stud_index);
 	}
