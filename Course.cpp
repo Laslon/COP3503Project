@@ -19,7 +19,6 @@ Course::Course(string id){
 }
 // load course_name, credit_hours, and weights from file
 void Course::getInfo(){
-	std::cout << "Getting info\n";
 	ifstream main_list("MainList.txt");
 	if(!main_list.is_open()){
 		std::cout << "Error: Couldn't open MainList file\n";
@@ -28,15 +27,11 @@ void Course::getInfo(){
 	std::string temp;
 	bool header_found = false;
 	// find "Courses" header
-	std::cout << "Searching for Courses header\n";
-	int c = 0;
 	while(!main_list.eof() && !header_found){
 		getline(main_list, temp);
-		if(temp.compare(0, 7, "Courses") == 0){
+		if(temp.compare("Courses") == 0){
 			header_found = true;
-			std::cout << "Header found\n";
 		}
-		//std::cout << temp << "\n";
 	}
 	// print error and return if header not found
 	if(!header_found){
@@ -46,13 +41,11 @@ void Course::getInfo(){
 	header_found = false; // reset
 	bool course_found = false;
 	// find course id, stop looking when found, or next header is reached, or eof reached
-	std::cout << "Searching for course ID\n";
 	while(!main_list.eof() && !header_found && !course_found){
-		getline(main_list, temp, ';');
+		getline(main_list, temp);
 		if(temp.compare(0, 7, course_ID) == 0){
 			course_found = true;
-			std::cout << "Course ID found\n";
-		}else if(temp.compare(0, 8, "Students")){
+		}else if(temp.compare(0, 8, "Students") == 0){
 			header_found = true;
 		}
 	}
@@ -61,16 +54,30 @@ void Course::getInfo(){
 		std::cout << "Error: Course not found.\n";
 		return;
 	}
-	std::cout << "Setting info\n";
-	getline(main_list, temp, ';');
-	course_name = temp;
-	getline(main_list, temp, ';');
-	credit_hours = atoi(temp.c_str());
-	for(int i = 0; i < 6; i++){
-		getline(main_list, temp, ';');
-		weights[i] = atoi(temp.c_str());
+	// extract tokens
+	temp = temp.substr(8, temp.size() - 8);
+	int i = 0;
+	while(temp[i] != ';'){
+		i++;
 	}
-	std::cout << "Closing file\n";
+	course_name = temp.substr(0, i);
+	temp = temp.substr(i + 1, temp.size() - i);
+	i = 0;
+	while(temp[i] != ';'){
+		i++;
+	}
+	credit_hours = atoi(temp.substr(0, i).c_str());
+	temp = temp.substr(i + 1, temp.size() - i);
+	for(int j = 0; j < 6; j++){
+		i = 0;
+		while(temp[i] != ';' && i < temp.size()){
+		i++;
+		}
+		weights[j] = atoi(temp.substr(0, i).c_str());
+		if(j < 5){
+			temp = temp.substr(i + 1, temp.size() - i);
+		}
+	}
 	main_list.close();
 }
 // load students from MainFile
