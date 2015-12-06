@@ -63,11 +63,9 @@ Colleen Woods;33344;PHY2048;CHM2046;COP3530;MAC3473;14;93.25
 
 
 Professors
-//Name, Teacher ID, Course
 Sebastian Chu;00089;PHY2048;CHM2046
 Andrea Costello;00019;ENG2300;COP3530;HUM2305
 Wilson Plitz;00042;MAC2313;MAC3473
-
 Courses
 //Course Number, Course Name, Credit Hours, Project, Homework, Test, Quiz, Classwork, Attendance
 
