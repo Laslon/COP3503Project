@@ -32,10 +32,21 @@ void Asgn::gradeAsgn(std::string nm){
 		while(!valid){
 			std::cout << "Enter grade (-1 for no grade, -2 to exit): ";
 			std::cin >> grd;
-			if(grd < -2 || (grd > points && points != 0)){
-				std::cout << "Invalid grade. Valid grade range for this assignment is 0 to " << points << ".\n"; 
-			}else{
+			if ((grd < points || points!= 0) && grd >= -2)
+			{
 				valid = true;
+			}
+			else
+			{
+				if (!std::cin) //prevents char from breaking code
+				{
+					std::cin.clear();
+					std::cin.ignore();
+					/*With multiple char the err message repeats
+					But will still run code*/
+				}
+				std::cout << "Invalid grade. Valid grade range for this assignment is 0 to " << points << ".\n"; 
+				std::cin >> grd;
 			}
 		}
 		// if user does not exit, replace old grade with new one
@@ -74,15 +85,33 @@ void Asgn::changeGrade(std::string nm, std::string stud){
 		bool valid = false;
 		int grd;
 		while(!valid){
-			std::cout << "Enter grade : ";
-			std::cin >> grd;
-			if(grd < 0 || (grd > points && points != 0)){
-				std::cout << "Invalid grade. Valid grade range for this assignment is 0 to " << points << ".\n"; 
-			}else{
-				valid = true;
+			std::cout << "Enter grade or -1 to exit : ";
+				std::cin >> grd;
+				if ((grd < points || points!= 0) && grd >= -1)
+				{
+					valid = true;
+				}
+				else
+				{
+					if (!std::cin) //prevents char from breaking code
+					{
+						std::cin.clear();
+						std::cin.ignore();
+						/*With multiple char the err message repeats
+						But will still run code*/
+					}
+					std::cout << "Invalid grade. Valid grade range for this assignment is 0 to " << points << ".\n"; 
+					std::cin >> grd;
+				}
 			}
 		}
-		grades[stud_index] = grd;
+		if(grd != -1){
+			grades[stud_index] = grd;
+		}
+		else
+		{
+			std::cout << "Grade unchanged.";
+		}
 	}
 }
 void Asgn::studentViewGrades(int stud_index){
