@@ -2,55 +2,55 @@ SebastianChu ; 00089
 AndreaCostello ; 00019
 WilsonPlitz ; 00042
 
-Weiss Adams;45033
-Emile Airn;34215
-Christine Alpine;34151
-Mark Auburn;14021
-Erika Berns;33320			
-Kyle Birch;53225
-Robin Blaise;42211
-Nathan Bolt;10343
-Johnathon Bragg;24444			
-Shaun Campbells;32155
-Steven Chang;21355	
-Alex Cloud;41534
-Ben Cogsworth;34505
-Blake Ellens;15252
-Ellie Fisher;25022
-Nigel Forester;54353
-Kunnu Forte;31432
-Lee Gibson;42352
-Ronald Harris;50422 
-Edea Harrison;10123
-Anna Jackson;05135
-Mallory Jerome;01025
-Grit Jones;13103
-Kairi Locke;31122
-Bonnie Lugo;14121
-Isabelle Marrara;43133
-Alice Morrison;40003
-Rachel Motz;43312
-Alexis Navar;30241
-Miles Nickels;14323
-Chris Nicos;12103
-Tyler Parks;45221
-Harry Potts;21130
-Pryce Queen;41042
-Nora Quince;13100 
-Elise Rogers;21040
-Kylie Rose;52451
-Mary Rosinante;35115
-Elaine Sakuraba;13043
-Santiago Sanchez;15102
-Jennifer Schnee;44201
-Seth Schneider;41335
-George Stillwell;14545	
-Courtney Sweeney;32103
-Ashe Thompson;33011
-Hershel Underhill;02315
-Bruce Wickham;43221
-Kimberly Wilkins;15531
-Percy Williams;22053
-Colleen Woods;33344
+WeissAdams ; 45033
+EmileAirn ; 34215
+ChristineAlpine ; 34151
+MarkAuburn ; 14021
+ErikaBerns ; 33320			
+KyleBirch ; 53225
+RobinBlaise ; 42211
+NathanBolt ; 10343
+JohnathonBragg ; 24444			
+ShaunCampbells ; 32155
+StevenChang ; 21355	
+AlexCloud ; 41534
+BenCogsworth ; 34505
+BlakeEllens ; 15252
+EllieFisher ; 25022
+NigelForester ; 54353
+KunnuForte ; 31432
+LeeGibson ; 42352
+RonaldHarris ; 50422 
+EdeaHarrison ; 10123
+AnnaJackson ; 05135
+MalloryJerome ; 01025
+GritJones ; 13103
+KairiLocke ; 31122
+BonnieLugo ; 14121
+IsabelleMarrara ; 43133
+AliceMorrison ; 40003
+RachelMotz ; 43312
+AlexisNavar ; 30241
+MilesNickels ; 14323
+ChrisNicos ; 12103
+TylerParks ; 45221
+HarryPotts ; 21130
+PryceQueen ; 41042
+NoraQuince ; 13100 
+EliseRogers ; 21040
+KylieRose ; 52451
+MaryRosinante ; 35115
+ElaineSakuraba ; 13043
+SantiagoSanchez ; 15102
+JenniferSchnee ; 44201
+SethSchneider ; 41335
+GeorgeStillwell ; 14545	
+CourtneySweeney ; 32103
+AsheThompson ; 33011
+HershelUnderhill ; 02315
+BruceWickham ; 43221
+KimberlyWilkins ; 15531
+PercyWilliams ; 22053
+ColleenWoods ; 33344
  
 
