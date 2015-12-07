@@ -14,6 +14,10 @@ class Course{
 		std::vector<Asgn> getAsgns();
 		int getStudentIndex(std::string stud);
 		std::vector<float> studgrades;
+		int endword();
+		void addtobuffer(char letter);
+		char str[5] = {0};
+		int strsize=0;
 	public:
 		Course(std::string id);
 		void testPrint();
