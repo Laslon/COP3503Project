@@ -1,6 +1,6 @@
-Sebastian Chu;00089
-Andrea Costello;00019
-Wilson Plitz;00042
+SebastianChu ; 00089
+AndreaCostello ; 00019
+WilsonPlitz ; 00042
 
 Weiss Adams;45033
 Emile Airn;34215
