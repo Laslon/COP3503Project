@@ -5,27 +5,29 @@
 #include <fstream>
 #include <cstdlib>
 #include <stdlib.h>
+#include "Course.cpp"
 
 using namespace std;
 
-int endword();
-void addtobuffer(char letter);
+int makefloat();
+void addtothebuffer(char letter);
 float getCourseAvg();
+void getGrades(string id);
+float studentGrade(string stud);
 
 char str[5] = {0};
-int strsize=0;
+int strsize_g=0;
 vector<float> studgrades;
 
-void addtobuffer(char letter)
+void addtothebuffer(char letter)
 {
-	
-	str [strsize] = letter;
-	strsize++;	
-
+	str [strsize_g] = letter;
+	strsize_g++;	
 }
 
 
-int endword()
+
+int makefloat()
 {
 	
 			float x = atof(string(str).c_str());
@@ -35,7 +37,7 @@ int endword()
 	{
 		str[i]=0;
 	}
-		strsize=0;				
+		strsize_g=0;				
 
 }
 
@@ -76,11 +78,15 @@ ifstream textfile(id.c_str());
 			 	c = s[i];
 				if(c==';')
 				{
-					endword();
+					makefloat();
 				}
 				else 
 				{
-					addtobuffer(c);
+					addtothebuffer(c);
+				}
+				if(i==(s.size()-1)) 				//last run of loop
+				{
+					makefloat();
 				}
 			}
 
@@ -88,9 +94,10 @@ ifstream textfile(id.c_str());
   
 	
 	}
-	getCourseAvg();
-	// studentGrade("Harry Potts");
-	
+	for (unsigned int i = 0; i < studgrades.size(); i++)		// IMP NOTE: It has to be an unsigned int when going through a vector.
+	{
+		cout << studgrades[i] << "/t";
+	}
 }
 
 }
@@ -106,9 +113,11 @@ float getCourseAvg()
 
 	cout << courseavg << endl;
 	
+	return courseavg;
+	
 }
 
-/* Commented out because I don't have these methods on my laptop
+
 float studentGrade(string stud)
 {
 	int si = getStudentIndex(stud);
@@ -116,4 +125,4 @@ float studentGrade(string stud)
 	cout << avg << endl;
 	return avg;
 }
-*/
+
