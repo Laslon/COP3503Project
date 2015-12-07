@@ -320,6 +320,7 @@ while(1>0)
     }
     if(choice1==1 || choice1==2 || (choice1==3 && !prohibit3))
         {
+        Course a = new Course(chosencourse);
             while(1>0)
 {
     cout << "____Teacher Menu____" << endl;
@@ -333,23 +334,68 @@ while(1>0)
     choice1 = validatoin(6,1);
     if(choice1==1)
     {
-        //viewGrades();
+        a.viewGrades();
     }
 if(choice1==2)
     {
-        //createAsgn();
+        string nm;
+        string tp;
+        string tp1;
+        int pts;
+        string dt;
+        bool stop=false;
+        cout << "Assignment Type: ";
+        cin >> tp;
+        if(tp=="Homework"||tp=="Course"||tp=="Attendance"||tp=="Tests"||tp=="Projects"||tp=="Classwork"||tp=="Quizzes")
+        {
+            tp1=tp;
+        }
+        cout << "Assignment Points: ";
+        cin >> pts;
+        cout << "Assignment Due Date: ";
+        cin >> dt;
+        cout << "Assignment Name: ";
+        cin >> nm;
+        if(nm=="Homework"||nm=="Course"||nm=="Attendance"||nm=="Tests"||nm=="Projects"||nm=="Classwork"||nm=="Quizzes")
+        {
+            stop = true;
+        }
+        vector<Asgn> b = a.getVector();
+        for(int i=0; i<b.size(); i++){
+            if(nm = b[i].getName()){
+                stop = true;
+            }
+        }
+        if(!stop){
+            a.createAsgn(nm, tp1, pts, dt);
+        }
+        
     }
 if(choice1==3)
     {
-        //deleteAsgn();
+         string deletedAsgn;
+        cout <<"Enter Assignment to delete: ";
+        cin >> deletedAsgn;
+        
+        a.deleteAsgn(deletedAsgn);
     }
 if(choice1==4)
     {
-        //gradeAsgn();
+        string gradename;
+        cout << "Enter Assignment to grade: ";
+        cin >> gradename;
+        a.gradeAsgn(gradename);
     }
 if(choice1==5)
     {
-        //changeGrade();
+        string studname;
+        string asgnname;
+        cout <<"Enter student name: ";
+        cin >> studname;
+        cout << "Enter assignment name: ";
+        cin >> asgnname;
+        
+        a.changeGrade(asgnname, studname);
     }
 if(choice1==6)
     {
