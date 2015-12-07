@@ -1,0 +1,184 @@
+#include <iostream>
+#include "Student.h"
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
+//#include "Course.cpp"
+
+using namespace std;
+
+//void StringAlerts(string)
+//call Course studentViewGrades
+// Course studentGrade
+//2.0 GPA Probation	
+//Below a C, failing this course
+//
+
+
+int validation(int last)
+{
+	int n; std::cin >> n;
+	bool valid = false;
+	while (!valid)
+	{
+		if (n<=last && n>=1)
+		{
+			valid = true;
+		}
+		else
+		{
+			if (!std::cin) //prevents char from breaking code
+			{
+				std::cin.clear();
+				std::cin.ignore();
+				/*With multiple char the err message repeats
+				But will still run code*/
+			}
+			std::cout << "\n Please input a valid option: ";
+			std::cin >> n;
+	}
+	}
+	return n;
+}
+
+	string Course1; 
+	string Course2; 
+	string Course3;
+	string Course4;
+	
+	
+	int choice1; 
+	int choice2;
+	int choice3;
+int main(){
+	
+	MainMenu:
+	
+	for (int i = 0; i >= 0; i++) //Main menu
+	{
+	cout << "Welcome. What would you like to do today? \n" << "1. View Course Grade \n" << "2. View GPA \n" << "3. Manage Alerts \n" << "4. Logout \n";
+	
+	choice1 = validation(4);
+
+	
+	
+	switch(choice1)
+	{
+		case 1: //Menu Option 1: View Course Grade
+		cout<< "Select your course:  \n" <<"1. PHY2048  \n" << "2. CHM2046 \n" << "3. MAC2313 \n" << "4. HUM2305 \n" << "5. COP3530 \n" << "6. MAC3473 \n" << "7. ENG2300 \n" << "8. Exit \n";
+	cin >> choice2;
+	
+	switch(choice2) //Sub Menu: Select what course they would like to view.
+	{
+		case 1:
+		
+		cout << "1. PHY2048 \n"; 
+		break;
+		
+		case 2:
+		
+		cout << "2. CHM2046 \n";
+		break;
+		
+		case 3:
+		
+		cout << "3. MAC2313 \n";
+		break;
+		
+		case 4:
+		
+		cout << "4. HUM2305 \n";
+		break;
+		
+		
+		case 5:
+		
+		cout << "5. COP3530 \n";
+		break;
+		
+		case 6:
+		
+		cout << "6. MAC3473 \n";
+		break;
+		
+		case 7:
+		
+		cout << "7. ENG2300 \n";
+		break;
+		
+		case 8:
+		
+		cout << "Goodbye \n";
+		break;
+		
+		default:
+		cout << "\n";
+		cout << "Please select an option from the menu \n";
+	
+		
+		
+	}
+
+		break;
+		
+		
+		case 2: //Menu Option: View GPA
+		for (int j = 0; j >= 0; j++)
+		{
+		cout << "Would you like to check your: \n" << "1. Semester GPA \n" << "2. Total GPA \n" <<"3. Return to Main Menu \n";
+		
+		
+		choice3=validation(3);
+	
+		
+		
+		switch(choice3) //Sub Menu Option: Selected either Semester GPA or Total GPA
+		{
+			case 1:
+			
+			break;
+			
+			case 2:
+			break;
+			
+			case 3:
+			
+			goto MainMenu;
+			default:
+			cout << "\n";
+			cout << "Please select an option from the menu. \n";
+		}
+	}
+		break;
+		
+		case 3:   //Menu Option: Manage Alerts
+		break;
+		
+		case 4: //Menu Option: Logout back into the Login Screen
+		cout << "Goodbye and have a wonderful day \n";
+		return 0;
+		break;
+		
+		default:
+		cout << "\n";
+		cout << "Please select an option from the menu \n";
+		break;
+	
+}
+}
+	
+}
+
+
+
+
+
+//Student //all methods private except menu
+//int menu() //First pick course, then pick option
+//int CalcSemGPA(int[] courseID)
+//int CalcTotalGPA(int points, int hours, int[] courseID)
+//void ViewGrades(int courseID) /*will access multidimensional array/vector/linkedlist and display student’s grades*/
+//void ViewAlerts(void) //String[] Alerts will be in outer menu
