@@ -19,6 +19,7 @@ class Asgn{
 		std::string getType();
 		std::string getDue();
 		int getPoints();
+		std::vector<int> getGrades();
 		void pushGrade(double grade);
 		
 }; 
