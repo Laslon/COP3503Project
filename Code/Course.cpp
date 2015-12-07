@@ -249,7 +249,7 @@ void Course::deleteAsgn(std::string nm){
 	}
 	if(index == -1)
 	{
-		
+		cout << "Assignment does not exist.";
 	}
 	else
 	{
