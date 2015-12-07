@@ -263,8 +263,41 @@ void Course::dataMaintenance(void){
 	const char* text = t.c_str();
 	cout << text; 
 	ofstream c_file (text, ofstream::out);
-	c_file << text << "/n";
-	c_file << "Category" << "/n";
+	c_file << course_name << "/n" << "size" << "/n" << students.size();
 	
+	//still needs to add student averages
+	c_file << "Assignments";
+	int asgnsWritten = 0;
+
+	//|\__/,|   (`\
+	//|_ _  |.--.) )
+	//( T   )     /
+	//(((^_(((/(((_>
+	string cats[] = {"Projects","Homework","Tests","Quizzes","Classwork","Attendence"};
+	for(int c = 0; c >= 6;c++)
+	{
+		
+		
+		while(asgns.size() == asgnsWritten)
+		{
+			int j = 0;
+			for(j = 0; j < asgns.size(); j++)
+			{
+				
+				if(asgns[j].getName().compare(cats[c]))
+				{
+					cout << "Category" << "/n" << cats[c];
+					cout << cats[c];
+				}
+			}
+			for(j = 0; j < asgns.size(); j++)
+			{
+				if(asgns[j].getName().compare(cats[c]))
+				{
+					cout << asgns[j].getName()<<";";
+				}
+			}
+		}
+	}
 	c_file.close();
 }
