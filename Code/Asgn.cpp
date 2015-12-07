@@ -147,3 +147,8 @@ std::string Asgn::getDue()
 {
 	return duedate;
 }
+//gives grades 
+std::vector<int> getGrades()
+{
+	return grades;
+}
