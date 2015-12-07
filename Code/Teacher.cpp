@@ -163,7 +163,7 @@ bool done = false;
     if(slist.fail())
     {
         cerr << "Error opening file." <<endl;
-        exit(1);
+        return;
     }//endoflistfail
 
     string word_teacher;
@@ -199,7 +199,7 @@ bool done = false;
     else
     {
         cout << "Unsuccessful Login!" <<endl;
-        menu();
+        return;
     }//end of unsuccessful login
 
 
@@ -415,7 +415,6 @@ if(choice1==6)
         }
 }//end of course while
 
-        menu();
 
 }//end of teacher
 int main(){
