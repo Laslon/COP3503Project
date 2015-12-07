@@ -238,6 +238,9 @@ void Course::createAsgn(std::string nm, int total_points, std::string deadline, 
 	asgns.push_back(Asgn(nm, type, total_points, deadline, getStudents()));
 	cout << "Assignment created ";
 }
+std::vector<Asgn> Course::getVector(){
+	return this->asgns;
+}
 void Course::deleteAsgn(std::string nm){
 	int index = -1;
 	for(int i =0; asgns.size()-1 <= index; i++)
