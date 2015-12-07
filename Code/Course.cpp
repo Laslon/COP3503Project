@@ -239,7 +239,7 @@ void Course::createAsgn(std::string nm, int total_points, std::string deadline, 
 	cout << "Assignment created ";
 }
 std::vector<Asgn> Course::getVector(){
-	return this->asgns;
+	return asgns;
 }
 void Course::deleteAsgn(std::string nm){
 	int index = -1;
