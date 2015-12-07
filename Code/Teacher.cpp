@@ -47,13 +47,13 @@ int courseindex=0;
 char str[30] = {0};
 int strsize=0;
 
-int validation(int last)
+int validation(int last, int first)
 {
 	int n; std::cin >> n;
 	bool valid = false;
 	while (!valid)
 	{
-		if (n<=last && n>=0)
+		if (n<=last && n>=first)
 		{
 			valid = true;
 		}
