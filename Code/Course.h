@@ -25,5 +25,6 @@ class Course{
 		void createAsgn(std::string nm, int pts, std::string dln, std::string tp);
 		void deleteAsgn(std::string nm);
 		void dataMaintenance(void); // updates course grades for students and course average for teacher
+		std::vector<Asgn> getVector(void);
 																		// when grades are added/changed
 };
