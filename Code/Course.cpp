@@ -239,78 +239,9 @@ bool Course::checkStudent(std::string stud){
 		return true;
 	}
 }
-
-void addtobuffer(char letter)
-{
-	
-	str [strsize] = letter;
-	strsize++;	
-
-}
-
-
-int endword()
-{
-	
-			float x = atof(string(str).c_str());
-			studgrades.push_back(x);
-
-	for(int i=0; i<5; i++)
-	{
-		str[i]=0;
-	}
-		strsize=0;				
-
-}
-
-void Course::getGrades()
-{
-course_ID = course_ID.append(".txt");
-
-ifstream textfile(course_ID.c_str());
-
-	if (!textfile)
-	{
-	cout << "Error in opening file, check file name and its presence in directory";
-	}
-	else
-{
-	int linenum = 0;
-	string s;
-	char c;
-	while(getline(textfile, s)) // Read each character one at a time (to account for no spaces).
-	{
-		string temp = s;
-		linenum++;
-		if(linenum==7)
-		{
-			for(int i=0; i<s.size();i++)
-			{
-			 	c = s[i];
-				if(c==';')
-				{
-					endword();
-				}
-				else 
-				{
-					addtobuffer(c);
-				}
-			}
-
-		}
-  
-	
-	}
-	
-}
-
-
-	
-}
 // return a specific students course average
 float Course::studentGrade(std::string stud){
-	int si = getStudentIndex(stud);
-	float avg = studgrades[si]; // to do: get averages from file
+	float avg = 90; // to do: get averages from file
 	return avg;
 }
 // display all of this course's assignment grades for a specific student
@@ -364,7 +295,11 @@ void Course::changeGrade(std::string nm, std::string stud){
 	}
 }
 void Course::createAsgn(std::string nm, int total_points, std::string deadline, std::string type){
-	asgns.push_back(Asgn(nm, type, total_points, deadline, getStudents()));
+	vector<int> init_grades;
+	for(int i = 0; i < students.size(); i++){
+		init_grades.push_back(-1);
+	}
+	asgns.push_back(Asgn(nm, type, total_points, deadline, getStudents(), init_grades));
 	cout << "Assignment created ";
 }
 std::vector<Asgn> Course::getVector(){
