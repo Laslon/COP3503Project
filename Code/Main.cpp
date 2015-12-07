@@ -4,7 +4,8 @@
 #include <fstream>
 #include <cmath>
 #include <stdlib.h>
-#include "Course.cpp"
+#include "Student.cpp"
+#include "Teacher.cpp"
 
 using namespace std;
 
