@@ -132,11 +132,71 @@ std::vector<std::string> Course::getStudents(){
 	}
 	return studs;
 }
+// load assignments from file
 std::vector<Asgn> Course::getAsgns(){
-	// load assignments from wherever
-	std::vector<Asgn> a = * new std::vector<Asgn>();
-	a.push_back(* new Asgn("Test Assignment", "Test Type", 15, "12/31/2015", students));
-	return a;
+	std::vector<Asgn> assignments = * new std::vector<Asgn>();
+	string f_name = course_ID + ".txt";
+	ifstream course_file(f_name.c_str());
+	string temp = "";
+	string name = "";
+	string catagory = "";
+	int points = 0;
+	string date = "";
+	// count students based on averages
+	getline(course_file, temp);
+	while(temp.compare("Averages") != 0){
+		getline(course_file, temp);
+	}
+	getline(course_file, temp);
+	int num_studs = (temp.size() + 1) / 6;
+	// for each catagory
+	while(!course_file.eof()){
+		// find Catagory header
+		bool header_found = false;
+		while(!course_file.eof() && !header_found){
+			getline(course_file, temp);
+			if(temp.compare("Category") == 0){
+				header_found = true;
+			}
+		}		
+		// get catagory
+		getline(course_file, temp);
+		catagory = temp;
+		header_found = false;
+		// for each assignment in catagory
+		getline(course_file, temp);
+		while(!course_file.eof() && !header_found){
+			// get name
+			name = temp.substr(0, temp.find(';', 0));
+			temp = temp.substr(temp.find(';', 0), temp.size() - temp.substr(0, temp.find(';', 0)).size());
+			// get points
+			points =  atoi(temp.substr(0, temp.find(';', 0)).c_str());
+			temp = temp.substr(temp.find(';', 0), temp.size() - temp.substr(0, temp.find(';', 0)).size());
+			// get date
+			date = temp;
+			// get grades
+			vector<int> grades;
+			getline(course_file, temp);
+			for(int j = 0; j < num_studs - 1; j++){
+				int i = 0;
+				while(temp[i] != ';'){
+					i++;
+				}
+				grades.push_back(atoi(temp.substr(0, i).c_str()));
+				temp = temp.substr(i + 1, temp.size() - i);
+			}
+			grades.push_back(atoi(temp.c_str()));
+			// check if end of catagory reached
+			getline(course_file, temp);
+			if(temp.compare(0, 8, "Category") == 0){
+				header_found = true;
+			}
+			Asgn temp_asgn((string)name, (string)catagory, (int)points, (string)date, students, (vector<int>)grades);
+			assignments.push_back(temp_asgn);
+		}
+	}
+	course_file.close();
+	return assignments;
 }
 void Course::testPrint(){
 	std::cout << "Loaded course info: \n";
