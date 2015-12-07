@@ -286,15 +286,16 @@ void Course::dataMaintenance(void){
 				
 				if(asgns[j].getName().compare(cats[c]))
 				{
-					cout << "Category" << "/n" << cats[c];
-					cout << cats[c];
+					c_file<< "Category" << "/n" << cats[c];
+					c_file << cats[c];
 				}
 			}
 			for(j = 0; j < asgns.size(); j++)
 			{
 				if(asgns[j].getName().compare(cats[c]))
 				{
-					cout << asgns[j].getName()<<";";
+					c_file << asgns[j].getName()<< ";" <<asgns[j].getPoints();
+					//print grades
 				}
 			}
 		}
