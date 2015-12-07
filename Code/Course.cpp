@@ -332,7 +332,7 @@ void Course::dataMaintenance(void){
 	const char* text = t.c_str();
 	cout << text; 
 	ofstream c_file (text, ofstream::out);
-	c_file << course_ID << "/n" << "size" << "/n" << students.size();
+	c_file << course_ID << "\n" << "size" << "\n" << students.size()+1<<"\n";
 	
 	//still needs to add student averages
 	c_file << "Assignments";
@@ -355,7 +355,7 @@ void Course::dataMaintenance(void){
 				
 				if(asgns[j].getName().compare(cats[c]))
 				{
-					c_file<< "Category" << "/n" << cats[c];
+					c_file<< "Category" << "\n" << cats[c];
 					c_file << cats[c];
 				}
 			}
@@ -363,13 +363,13 @@ void Course::dataMaintenance(void){
 			{
 				if(asgns[j].getName().compare(cats[c]))
 				{
-					c_file << asgns[j].getName()<< ";" <<asgns[j].getPoints()<< ";" << asgns[j].getDue() << "/n";
+					c_file << asgns[j].getName()<< ";" <<asgns[j].getPoints()<< ";" << asgns[j].getDue() << "\n";
 					for(int z = 0;asgns[j].getGrades().size()!= 0;z++)
 					{
 						std::vector<int> g = asgns[j].getGrades();
 						c_file << g[z] <<";";
 					}
-					c_file << "/n";
+					c_file << "\n";
 					asgnsWritten++;
 				}
 			}
