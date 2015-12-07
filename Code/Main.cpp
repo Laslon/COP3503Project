@@ -7,13 +7,13 @@
 
 using namespace std;
 
-int validation()
+int validation(int last)
 {
 	int n; std::cin >> n;
 	bool valid = false;
 	while (!valid)
 	{
-		if (n<=5 && n>=1)
+		if (n<=last && n>=1)
 		{
 			valid = true;
 		}
