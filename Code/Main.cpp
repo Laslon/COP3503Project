@@ -76,7 +76,7 @@ void menu()
     if(stemp_password == s_password && stemp_username == s_username)
     {
         cout << "Successful Login!" <<endl;
-        //call student object
+        student(stemp_username, stemp_password);
         stemp_password.clear();
         stemp_username.clear();
     }//end of successful login
