@@ -132,3 +132,18 @@ void Asgn::viewGrades(void){
 std::string Asgn::getName(){
 	return name;
 }
+//gives assigment type
+std::string Asgn::getType()
+{
+	return type;
+}
+// gives assigment points
+int Asgn::getPoints()
+{
+	return points;
+}
+//gives assigment date
+std::string Asgn::getDue()
+{
+	return duedate;
+}
