@@ -13,11 +13,6 @@ class Course{
 		std::vector<std::string> getStudents();
 		std::vector<Asgn> getAsgns();
 		int getStudentIndex(std::string stud);
-		std::vector<float> studgrades;
-		int endword();
-		void addtobuffer(char letter);
-		char str[5] = {0};
-		int strsize=0;
 	public:
 		Course(std::string id);
 		void testPrint();
@@ -31,6 +26,5 @@ class Course{
 		void deleteAsgn(std::string nm);
 		void dataMaintenance(void); // updates course grades for students and course average for teacher
 		std::vector<Asgn> getVector(void);
-		void getGrades();
 																		// when grades are added/changed
 };
