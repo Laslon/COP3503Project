@@ -50,7 +50,7 @@ int main()
     	if(slist.fail())
 	  {
         	cerr << "Error opening file." <<endl;
-	        exit(1);
+	        return 1;
 	  }//endoflistfail
 
 	    if(choice==1)
