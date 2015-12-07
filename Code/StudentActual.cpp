@@ -10,10 +10,10 @@
 using namespace std;
 
 
-
 void endline();
 int endword();
 void addtobuffer(char letter);
+int Student(string studentID, string studentName);
 
 string studpass;
 string studid;
@@ -30,7 +30,7 @@ string Course2;
 string Course3;
 string Course4;
 
-string desiredstud = "Weiss Adams"; // SAMPLE
+string desiredstud = "Harry Potts"; // SAMPLE
 
 
 /* 
@@ -60,7 +60,7 @@ int main()
 	{
 		string temp = s;
 		
-		cout << temp;
+		// cout << temp << endl;
   
 		if(temp=="Professors")
 			break;
@@ -104,6 +104,7 @@ int main()
 	Course3 = courses[2];
 	Course4 = courses[3];
 	
+	Student(studpass, studid);
 	
 	
 }
