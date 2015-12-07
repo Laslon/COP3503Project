@@ -426,8 +426,12 @@ void Course::dataMaintenance(void){
 			{
 				if(asgns[j].getName().compare(cats[c]))
 				{
-					c_file << asgns[j].getName()<< ";" <<asgns[j].getPoints();
-					//print grades
+					c_file << asgns[j].getName()<< ";" <<asgns[j].getPoints()<< ";" << asgns[j].getDue() << "/n";
+					for(int z = 0;asgns[j].getGrades().size()!= 0;z++)
+					{
+						std::vector<int> g = asgns[j].getGrades();
+						c_file << g[z] <<";";
+					}
 				}
 			}
 		}
