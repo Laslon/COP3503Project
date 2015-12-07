@@ -3,12 +3,13 @@
 #include <limits>
 // assignment class methods
 // constructor
-Asgn::Asgn(std::string nm, std::string tp, int pt, std::string dt, std::vector<std::string> st){ // how should students be loaded? (Passed or from file?)
+Asgn::Asgn(std::string nm, std::string tp, int pt, std::string dt, std::vector<std::string> st, std::vector<int> grds){ // how should students be loaded? (Passed or from file?)
 	this->name = nm;
 	this->type = tp;
 	this->points = pt;
 	this->duedate = dt;
 	this->students = st;
+	this->grades = grds;
 }
 // public method for adding grades to list
 void Asgn::pushGrade(double grade){
