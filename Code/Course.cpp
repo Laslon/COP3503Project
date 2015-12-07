@@ -327,11 +327,12 @@ void Course::deleteAsgn(std::string nm){
 	cout << "Assignment deleted (Maybe)";
 }
 void Course::dataMaintenance(void){
-	string t = course_name + ".txt";;
+	cout<< "got here";
+	string t = course_ID + ".txt";;
 	const char* text = t.c_str();
 	cout << text; 
 	ofstream c_file (text, ofstream::out);
-	c_file << course_name << "/n" << "size" << "/n" << students.size();
+	c_file << course_ID << "/n" << "size" << "/n" << students.size();
 	
 	//still needs to add student averages
 	c_file << "Assignments";
