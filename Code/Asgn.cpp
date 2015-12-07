@@ -63,6 +63,7 @@ void Asgn::gradeAsgn(std::string nm){
 void Asgn::changeGrade(std::string nm, std::string stud){
 	int stud_index = -1;
 	int i = 0;
+	int grd;
 	// find student in student array
 	while(i < students.size() && stud_index == -1){
 		if(students[i].compare(stud) == 0){
@@ -84,26 +85,24 @@ void Asgn::changeGrade(std::string nm, std::string stud){
 			std::cout << grades[stud_index] << "\n";
 		}
 		bool valid = false;
-		int grd;
 		while(!valid){
 			std::cout << "Enter grade or -1 to exit : ";
+			std::cin >> grd;
+			if ((grd < points || points!= 0) && grd >= -1)
+			{
+				valid = true;
+			}
+			else
+			{
+				if (!std::cin) //prevents char from breaking code
+				{
+					std::cin.clear();
+					std::cin.ignore();
+					/*With multiple char the err message repeats
+					But will still run code*/
+				}
+				std::cout << "Invalid grade. Valid grade range for this assignment is 0 to " << points << ".\n"; 
 				std::cin >> grd;
-				if ((grd < points || points!= 0) && grd >= -1)
-				{
-					valid = true;
-				}
-				else
-				{
-					if (!std::cin) //prevents char from breaking code
-					{
-						std::cin.clear();
-						std::cin.ignore();
-						/*With multiple char the err message repeats
-						But will still run code*/
-					}
-					std::cout << "Invalid grade. Valid grade range for this assignment is 0 to " << points << ".\n"; 
-					std::cin >> grd;
-				}
 			}
 		}
 		if(grd != -1){
