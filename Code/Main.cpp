@@ -7,24 +7,38 @@
 
 using namespace std;
 
-void teacher()
+int validation()
 {
-    cout << "____Teacher Menu____" << endl;
-    cout << "1) View Grades" << endl;
-    cout << "2) Create Assignment" << endl;
-    cout << "3) Delete Assignment" << endl;
-    cout << "4) Grade Assignment" << endl;
-    cout << "5) Change Grade" << endl;
-    cout << "6) Exit" << endl;
-}//end of teacher
-
+	int n; std::cin >> n;
+	bool valid = false;
+	while (!valid)
+	{
+		if (n<=5 && n>=1)
+		{
+			valid = true;
+		}
+		else
+		{
+			if (!std::cin) //prevents char from breaking code
+			{
+				std::cin.clear();
+				std::cin.ignore();
+				/*With multiple char the err message repeats
+				But will still run code*/
+			}
+			std::cout << "\n Please input a valid option: ";
+			std::cin >> n;
+		}
+	}
+	return n;
+}
 void menu()
 {
     int choice;
     cout << "____Login Menu____" << endl;
     cout << "Enter 1) for Student Login" << endl;
     cout << "Enter 2) for Teacher Login" << endl;
-    cin >> choice;
+    choice = validation(2);
 
     ifstream slist;
     slist.open("StudentList.txt");
@@ -62,6 +76,7 @@ void menu()
     if(stemp_password == s_password && stemp_username == s_username)
     {
         cout << "Successful Login!" <<endl;
+        //call student object
         stemp_password.clear();
         stemp_username.clear();
     }//end of successful login
@@ -75,46 +90,14 @@ void menu()
 
     if(choice==2)
     {
-        string word_teacher;
-        string t_username;
-        string ttemp_username;
-        string t_password;
-        string ttemp_password;
-
-        cout <<"____Teacher Login____" <<endl;
-        cout <"Username: ";
-        cin >> t_username;
-        cout <<"Password: ";
-        cin >>t_password;
-
-        while(!slist.eof())
-        {
-            slist >> word_teacher;
-            if(word_teacher == t_password)
-            {
-                ttemp_password = word_teacher;
-                slist >> word_teacher;
-                slist >> word_teacher;
-                ttemp_username = word_teacher;
-            }//end of password check
-        }//end of while2
-    if(ttemp_password==t_password && ttemp_username==t_username)
-    {
-        cout << "Successful Login!" << endl;
-        ttemp_password.clear();
-        ttemp_username.clear();
-    }//end of successful login
-    else
-    {
-        cout << "Unsuccessful Login!" <<endl;
-        menu();
-    }//end of unsuccessful login
+       teacher();
 
     }//end of choice2
 }//endofmenu
 
 int main()
 {
+    endword();
    menu();
     return 0;
 }
