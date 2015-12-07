@@ -368,9 +368,12 @@ void Course::dataMaintenance(void){
 						std::vector<int> g = asgns[j].getGrades();
 						c_file << g[z] <<";";
 					}
+					c_file << "/n";
+					asgnsWritten++;
 				}
 			}
 		}
 	}
+	c_file << "new";
 	c_file.close();
 }
