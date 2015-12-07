@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <vector>
+#include "Course.cpp"
 
 using namespace std;
 
