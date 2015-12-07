@@ -290,7 +290,7 @@ while(1>0)
         cout << "0)" << "Go back to login" << endl;
         cout << "1)" << course1 << endl;
         cout << "2)" << course2 << endl;
-        choice1 = valdation(2,0);
+        choice1 = validation(2,0);
 
         // course_menu=false;
     }//end of if
@@ -321,7 +321,7 @@ while(1>0)
     }
     if(choice1==1 || choice1==2 || (choice1==3 && !prohibit3))
         {
-        Course a = new Course(chosencourse);
+        Course a = *new Course(chosencourse);
             while(1>0)
 {
     cout << "____Teacher Menu____" << endl;
@@ -332,7 +332,7 @@ while(1>0)
     cout << "5) Change Grade" << endl;
     cout << "6) Go back to course menu" << endl;
     cout << "Enter choice: ";
-    choice1 = validatoin(6,1);
+    choice1 = validation(6,1);
     if(choice1==1)
     {
         a.viewGrades();
@@ -363,12 +363,12 @@ if(choice1==2)
         }
         vector<Asgn> b = a.getVector();
         for(int i=0; i<b.size(); i++){
-            if(nm = b[i].getName()){
+            if(nm.compare(b[i].getName()) == 0){
                 stop = true;
             }
         }
         if(!stop){
-            a.createAsgn(nm, tp1, pts, dt);
+            a.createAsgn(nm, pts, dt, tp1);
         }
         
     }
@@ -385,7 +385,7 @@ if(choice1==4)
         string gradename;
         cout << "Enter Assignment to grade: ";
         cin >> gradename;
-        a.gradeAsgn(gradename);
+        a.enterGrades(gradename);
     }
 if(choice1==5)
     {
@@ -418,3 +418,6 @@ if(choice1==6)
         menu();
 
 }//end of teacher
+int main(){
+	return 0;
+}
