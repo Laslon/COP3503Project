@@ -19,5 +19,6 @@ class Asgn{
 		std::string getType();
 		int getPoints();
 		void pushGrade(double grade);
+		std::string getDue();
 		
 }; 
