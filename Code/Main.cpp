@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <cmath>
+#include <stdlib.h>
 #include "Course.cpp"
 
 using namespace std;
@@ -38,7 +39,8 @@ void menu()
     cout << "____Login Menu____" << endl;
     cout << "Enter 1) for Student Login" << endl;
     cout << "Enter 2) for Teacher Login" << endl;
-    choice = validation(2);
+    cout << "Enter 3) Exit out of program." << endl;
+    choice = validation(3);
 
     ifstream slist;
     slist.open("StudentList.txt");
@@ -93,11 +95,15 @@ void menu()
        teacher();
 
     }//end of choice2
+    if(choice==3)
+    {
+    	exit(0);
+    }
 }//endofmenu
 
 int main()
 {
-    endword();
+    // endword();
    menu();
     return 0;
 }
