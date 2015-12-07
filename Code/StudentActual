@@ -1,5 +1,4 @@
 #include <iostream>
-#include "Student.h"
 #include <cmath>
 #include <string.h>
 #include <fstream>
@@ -10,12 +9,6 @@
 
 using namespace std;
 
-//void StringAlerts(string)
-//call Course studentViewGrades
-// Course studentGrade
-//2.0 GPA Probation	
-//Below a C, failing this course
-//
 
 
 void endline();
@@ -25,64 +18,36 @@ void addtobuffer(char letter);
 string studpass;
 string studid;
 string courses[4];
+
 int credithours;
 float studavg;
 int courseindex=0;
 char str[30] = {0};
 int strsize=0;
 
+string Course1;
+string Course2;
+string Course3;
+string Course4;
+
+string desiredstud = "Weiss Adams"; // SAMPLE
+
+
+/* 
+Students
+Weiss Adams;45033;MAC2313;HUM2305;COP3530;MAC3473;56;83.01
+Emile Airn;34215;PHY2048;CHM2046;MAC3473;ENG2300;48;76.64
+Christine Alpine;34151;PHY2048;CHM2046;COP3530;MAC3473;52;84.21
+Professors
+*/
 
 bool stud = false;				// GLOBAL Variables.
 bool usernamedone = false;
 bool credithrdone = false;
 bool done = false;
-bool valid = false;
 
-	string Course1; 
-	string Course2;
-	string Course3;
-	string Course4;
-	
-	
-	int choice1; 
-	int choice2;
-	int choice3;
-	
-
-string desiredstud = "Kylie Rose"; // SAMPLE
-
-
-int validation(int last)
+int main()
 {
-	int n; std::cin >> n;
-	bool valid = false;
-	while (!valid)
-	{
-		if (n<=last && n>=1)
-		{
-			valid = true;
-		}
-		else
-		{
-			if (!std::cin) //prevents char from breaking code
-			{
-				std::cin.clear();
-				std::cin.ignore();
-				/*With multiple char the err message repeats
-				But will still run code*/
-			}
-			std::cout << "\n Please input a valid option: ";
-			std::cin >> n;
-	}
-	}
-	return n;
-}
-
-
-int main(){
-	
-	
-	
 	ifstream textfile("mainlist.txt");
 	if (!textfile)
 	{
@@ -94,6 +59,8 @@ int main(){
 	while(getline(textfile, s)) // Read each character one at a time (to account for no spaces).
 	{
 		string temp = s;
+		
+		cout << temp;
   
 		if(temp=="Professors")
 			break;
@@ -117,6 +84,7 @@ int main(){
 					courseindex=0;
 				}
 			}
+			
 			if(studpass==desiredstud)
 				break;
 			
@@ -131,10 +99,12 @@ int main(){
 	cout << "end results: " << studid << " " << studpass << " " << "their four courses " << courses[0] << " " << courses[1] << " " << courses[2] << " " << courses[3] << " " << credithours << " " << studavg << endl;
 
 	// CREATE YOUR STUDENT OBJECT HERE NOW.
-	Course1 = courses[0];
+	Course1 = courses[0]; 
 	Course2 = courses[1];
 	Course3 = courses[2];
 	Course4 = courses[3];
+	
+	
 	
 }
 
@@ -206,41 +176,138 @@ int endword()
 		{
 			str[i]=0;
 		}
-		strsize=0;				
+		strsize=0;	
+		
+		return 0;			
 
+}
+
+//void StringAlerts(string)
+//call Course studentViewGrades
+// Course studentGrade
+//2.0 GPA Probation	
+//Below a C, failing this course
+//
+
+//void CalcSemGPA(int[] courseID)
+//{
+	
+//}
+void StringAlerts(float semesterGPA)
+{
+	if (semesterGPA <= 2.0)
+	{
+		cout<< " _____________________________________________________________\n";
+		cout<< "|                                                             |\n";
+		cout<< "|                                                             |\n";
+		cout<< "|              WARNING YOU ARE CURRENTLY FAILING              |\n";
+		cout<< "|                                                             |\n";
+		cout<< "|_____________________________________________________________|\n";
+	}
+	else 
+	{
+		cout << "There are no alerts right now. \n";
+	}
+		
+}
+
+int validation(int last)
+{
+	int n; std::cin >> n;
+	bool valid = false;
+	while (!valid)
+	{
+		if (n<=last && n>=1)
+		{
+			valid = true;
+		}
+		else
+		{
+			if (!std::cin) //prevents char from breaking code
+			{
+				std::cin.clear();
+				std::cin.ignore();
+				/*With multiple char the err message repeats
+				But will still run code*/
+			}
+			std::cout << "\n Please input a valid option: ";
+			std::cin >> n;
+	}
+	}
+	return n;
+}
+
+	
+	int choice1; 
+	int choice2;
+	int choice3;
+	int choice4;
+	
+	int semesterGPA;
+	int totalGPA;
+int Student(string studentID, string studentName)
+{
 	
 	MainMenu:
 	
-	for (int j = 0; j >= 0; j++) //Main menu
+	for (int i = 0; i >= 0; i++) //Main menu
 	{
 	cout << "Welcome. What would you like to do today? \n" << "1. View Course Grade \n" << "2. View GPA \n" << "3. Manage Alerts \n" << "4. Logout \n";
 	
-	cin >> choice1;
-
 	choice1 = validation(4);
-
 
 	
 	
 	switch(choice1)
 	{
 		case 1: //Menu Option 1: View Course Grade
+		for (int j = 0; j >= 0; j++)
+		{
+			cout << "Select your course: \n" << "1. " << Course1 << "\n" << "2. " << Course2 << "\n" << "3. " << Course3 << "\n" << Course4 << "\n" << "5. Exit \n";
 
+			choice2 = validation(5);
 	
-		
-		
-		
-		cout << "Goodbye \n";
-		break;
+			
+			switch(choice2)
+			{
+				case 1:
+				
+				cout << "Your grade in " << Course1 << " is: "  << " \n" ;
+				
+				break;
+				
+				case 2:
+				
+				cout << "Your grade in " << Course2 << " is: " << " \n";
+				
+				break;
+				
+				case 3:
+				
+				cout << "Your grade in " << Course3 << " is: " << " \n";
+			
+				break;
+				
+				case 4:
+				
+				cout << "Your grade in " << Course4 << " is: " << " \n";
+				
+				break;
+				
+				case 5:
+				goto MainMenu;
+				break;
+				
+			}
+		}
 
-		
+		break;
 		
 		
 		case 2: //Menu Option: View GPA
 		for (int k = 0; k >= 0; k++)
 		{
 		cout << "Would you like to check your: \n" << "1. Semester GPA \n" << "2. Total GPA \n" <<"3. Return to Main Menu \n";
-		cin >> choice3;
 		choice3 = validation(3);
 		
 		
@@ -248,14 +315,19 @@ int endword()
 		{
 			case 1:
 			
+			cout << "Your Semester GPA is: " << semesterGPA << " \n" ;
+			
 			break;
 			
 			case 2:
+			
+			cout << "Your Total GPA is: " << totalGPA << " \n";
 			break;
 			
 			case 3:
-			
+		
 			goto MainMenu;
+			
 			default:
 			cout << "\n";
 			cout << "Please select an option from the menu. \n";
@@ -264,10 +336,39 @@ int endword()
 		break;
 		
 		case 3:   //Menu Option: Manage Alerts
+		for (int l = 0; l >= 0 ; l++)
+		{
+			cout << "Would you like to: \n" << "1. Display Alerts \n" << "2. Delete Alerts \n" << "3. Return to Main Menu \n";
+			choice4 = validation(3);
+			
+			switch(choice4)
+			{
+				case 1:
+				float choice5; 
+				cin >> choice5;
+				StringAlerts(choice5);
+				
+				break;
+				
+				case 2:
+				
+				break;
+				
+				case 3:
+				
+				goto MainMenu;
+				
+				break;
+			}
+				
+		}
 		break;
+		
+	
 		
 		case 4: //Menu Option: Logout back into the Login Screen
 		cout << "Goodbye and have a wonderful day \n";
+		//menu();
 		return 0;
 		break;
 		
