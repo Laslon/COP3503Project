@@ -34,77 +34,76 @@ int validation(int last)
 	}
 	return n;
 }
-void menu()
-{
-    int choice;
-    cout << "____Login Menu____" << endl;
-    cout << "Enter 1) for Student Login" << endl;
-    cout << "Enter 2) for Teacher Login" << endl;
-    cout << "Enter 3) Exit out of program." << endl;
-    choice = validation(3);
-
-    ifstream slist;
-    slist.open("StudentList.txt");
-    if(slist.fail())
-    {
-        cerr << "Error opening file." <<endl;
-        exit(1);
-    }//endoflistfail
-
-    if(choice==1)
-    {
-        string word_student;
-        string s_username;
-        string stemp_username;
-        string s_password;
-        string stemp_password;
-
-        cout <<"____Student Login____" <<endl;
-        cout <<"Username: ";
-        cin >> s_username;
-        cout <<"Password: ";
-        cin >>s_password;
-
-        while(!slist.eof())
-        {
-            slist >> word_student;
-            if(word_student == s_password)
-            {
-                stemp_password = word_student;
-                slist >> word_student;
-                slist >> word_student;
-                stemp_username = word_student;
-            }//endofpasswordcheck
-        }//endofwhile
-    if(stemp_password == s_password && stemp_username == s_username)
-    {
-        cout << "Successful Login!" <<endl;
-        student(stemp_username, stemp_password);
-        stemp_password.clear();
-        stemp_username.clear();
-    }//end of successful login
-    else
-    {
-        cout <<"Unsuccessful Login!" << endl;
-        menu();
-    }//end of unsuccessful login
-
-    }//endofchoice1
-
-    if(choice==2)
-    {
-       teacher();
-
-    }//end of choice2
-    if(choice==3)
-    {
-    	exit(0);
-    }
-}//endofmenu
-
 int main()
 {
-    // endword();
-   menu();
-    return 0;
-}
+	while(true)
+	{
+	  int choice;
+	    cout << "____Login Menu____" << endl;
+	    cout << "Enter 1) for Student Login" << endl;
+      		cout << "Enter 2) for Teacher Login" << endl;
+		 cout << "Enter 3) Exit out of program." << endl;
+	    choice = validation(3);
+
+	    ifstream slist;
+	    slist.open("StudentList.txt");
+    	if(slist.fail())
+	  {
+        	cerr << "Error opening file." <<endl;
+	        exit(1);
+	  }//endoflistfail
+
+	    if(choice==1)
+	    {
+	        string word_student;
+	        string s_username;
+	        string stemp_username;
+	        string s_password;
+	        string stemp_password;
+
+	        cout <<"____Student Login____" <<endl;
+	        cout <<"Username: ";
+	        cin >> s_username;
+	        cout <<"Password: ";
+	        cin >>s_password;
+
+	        while(!slist.eof())
+	        {
+	            slist >> word_student;
+	            if(word_student == s_password)
+	            {
+	                stemp_password = word_student;
+	                slist >> word_student;
+	                slist >> word_student;
+        	        stemp_username = word_student;
+        	    }//endofpasswordcheck
+        	}//endofwhile
+	 if(stemp_password == s_password && stemp_username == s_username)
+	 {
+	      cout << "Successful Login!" <<endl;
+	        student(stemp_username, stemp_password);
+	        stemp_password.clear();
+	        stemp_username.clear();
+	    }//end of successful login
+	    else
+	    {
+	        cout <<"Unsuccessful Login!" << endl;
+	 continue;
+	    }//end of unsuccessful login
+
+	    }//endofchoice1
+
+	    if(choice==2)
+	 {
+	 teacher();
+
+	    }//end of choice2
+	    if(choice==3)
+	    {
+    		break;
+	     }
+	}
+	return 0;
+	     
+}//endofmenu
+
